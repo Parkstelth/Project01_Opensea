@@ -9,14 +9,19 @@ import {
 
 import Create from "./components/Create";
 import Home from "./components/Home";
+import {useState, useEffect} from 'react';
 
 
 function App() {
+ 
+
   return (
 <BrowserRouter>
 <Routes>
+
   <Route exact={true} path="/" element={<Home />} />
   <Route path="/create" element={<Create />} />
+  {/* <Route path="/Home" element={<MdAccountCircle />} /> */}
 </Routes>
 </BrowserRouter>
   );
