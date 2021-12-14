@@ -21,11 +21,11 @@ import {
   MdAccountCircle,
 } from "react-icons/md";
 
-function Nav({setHomeAccount}) {
+function Nav({setmainaccount}) {
   
  
     const [web3, setWeb3] = useState();
-    const [account, setAccount] = useState('');
+    const [account, setAccount] = useState("");
 
     useEffect(() => {
         if (typeof window.ethereum !== "undefined") { // window.ethereum이 있다면
@@ -37,6 +37,10 @@ function Nav({setHomeAccount}) {
             }
         }
     }, []);
+
+    useEffect(()=>{
+      setmainaccount(account)
+    },[account]);
     
     const connectWallet = async () => {
         const accounts = await window.ethereum.request({
@@ -46,9 +50,7 @@ function Nav({setHomeAccount}) {
     };
  
  
-    useEffect(()=>{
-      setHomeAccount(account);
-    },[account])
+
 
     return (
       <div>
@@ -96,7 +98,7 @@ function Nav({setHomeAccount}) {
           <div>
             <ul className="menu-item-container">
               <li className="menu-item">Browse</li>
-              <li className="menu-item">Activity</li>
+              <li><Link to="/activity" className="menu-item">Activity</Link></li>
               <li className="menu-item">Ranking</li>
               <li><Link to ="/create" className="menu-item">Create</Link></li>
               <li className="menu-item">Help</li>
