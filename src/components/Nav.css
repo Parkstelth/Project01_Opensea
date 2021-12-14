@@ -215,6 +215,10 @@
     font-size: 14pt;
     font-weight: bold;
     font-family: "Nunito Sans";
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+    
   }
   .search-container {
     width: 800px;
@@ -242,6 +246,7 @@
     justify-content: center;
     min-height: 60px;
     color: rgb(80, 80, 80);
+    text-decoration: none;
   }
   .menu-item:hover {
     border-bottom: solid blue 2px;

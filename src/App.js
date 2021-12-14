@@ -1,13 +1,24 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import React from 'react';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+  } from "react-router-dom"
 
-import Kryptokitty from "./components/Kryptokitty";
+import Create from "./components/Create";
+import Home from "./components/Home";
+
 
 function App() {
   return (
-    <div className="App">
-      <Kryptokitty />
-    </div>
+<BrowserRouter>
+<Routes>
+  <Route exact={true} path="/" element={<Home />} />
+  <Route path="/create" element={<Create />} />
+</Routes>
+</BrowserRouter>
   );
 }
 
