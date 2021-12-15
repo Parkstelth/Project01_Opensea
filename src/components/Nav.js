@@ -21,9 +21,9 @@ import {
   MdAccountCircle,
 } from "react-icons/md";
 
-function Nav({setmainaccount}) {
+function Nav({setmainaccount,setmainweb3}) {
   
- 
+
     const [web3, setWeb3] = useState();
     const [account, setAccount] = useState("");
 
@@ -31,7 +31,10 @@ function Nav({setmainaccount}) {
         if (typeof window.ethereum !== "undefined") { // window.ethereum이 있다면
             try {
                 const web = new Web3(window.ethereum);  // 새로운 web3 객체를 만든다
+               
                 setWeb3(web);
+            
+                
             } catch (err) {
                 console.log(err);
             }
@@ -42,6 +45,10 @@ function Nav({setmainaccount}) {
       setmainaccount(account)
     },[account]);
     
+    useEffect(()=>{
+      setmainweb3(web3)
+    },[web3]);
+
     const connectWallet = async () => {
         const accounts = await window.ethereum.request({
             method: "eth_requestAccounts",
