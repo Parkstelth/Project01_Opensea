@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import Items from './Items';
-import { Link } from 'react-router-dom';
 import './ItemList.css';
+import { Link } from 'react-router-dom';
+
+function loadData(value) {
+  console.log(value);
+}
+
 const ItemList = ({ data, onClickedItem }) => {
-  const onClickItem = (e) => {
+  const onClick = (e) => {
     onClickedItem(e);
   };
 
-  console.log(data);
   return (
     <div className="card-group addOption">
       {data.map((item) => (
@@ -17,8 +21,16 @@ const ItemList = ({ data, onClickedItem }) => {
             <h5 className="card-title addOption">{item.name}</h5>
             {/* <p className="card-text">{item.description}</p> */}
             <p className="card-text addOption">
-              <button type="button" class="btn btn-secondary">
-                구매하기
+              <button
+                type="button"
+                class="btn btn-secondary"
+                onClick={() => {
+                  onClick(item);
+                }}
+              >
+                <Link to={`/browse/${item.id}`} class="btn btn-secondary">
+                  상세보기
+                </Link>
               </button>
             </p>
           </div>

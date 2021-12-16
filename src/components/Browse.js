@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemList from './ItemList/ItemList';
 import Items from './ItemList/Items';
 import './Browse.css';
-const Browse = () => {
+const Browse = ({ onClickItem }) => {
   const [data, setData] = useState([]);
   const [clickedData, setClickedData] = useState([]);
   useEffect(() => {
@@ -24,8 +24,7 @@ const Browse = () => {
 
   const onClickedItem = (e) => {
     console.log(e);
-    setClickedData(e);
-    console.log(clickedData);
+    onClickItem(e);
   };
 
   return (
