@@ -42,7 +42,7 @@ function Activity({ web3, account }) {
         }}
       ></input>
       <button onClick={addNewErc721Token}>add new erc721</button>
-      <TokenList erc721list={erc721list} />
+      <TokenList web3={web3} account={account} erc721list={erc721list} />
     </div>
   );
 }

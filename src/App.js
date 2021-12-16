@@ -17,6 +17,18 @@ function App() {
     setMainaccount(mainaccount);
   }, [mainaccount]);
 
+  useEffect(() => {
+    const options = { method: 'GET' };
+
+    fetch(
+      'https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=20',
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <BrowserRouter>
       <Nav setmainaccount={setMainaccount} setmainweb3={setMainweb3} />

@@ -1,35 +1,28 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState } from 'react';
-function Erc721({ erc721list }) {
-  const [list, setList] = useState([]);
-  console.log(erc721list);
-  //   async function findURI(uri) {
-  //     const res = await axios.get(uri);
-  //     console.log('test1', res.data.image);
-  //     return res.data.image;
-  //   }
-
-  //   useEffect(() => {
-  //     (async () => {
-  //       const arrElem = [];
-  //       for (const token of erc721list) {
-  //         console.log(token);
-  //         const src = await findURI(token.tokenURI);
-  //         console.log(src);
-  //         arrElem.push(
-  //           <div className="erc721token">
-  //             Name: <span className="name">{token.name}</span>(
-  //             <span className="symbol">{token.symbol}</span>)
-  //             <div className="nft">id: {token.tokenId}</div>
-  //             {/* {findURI(token.tokenURI)} */}
-  //             <img src={src} width={300} />
-  //           </div>
-  //         );
-  //       }
-  //       setList(arrElem);
-  //     })();
-  //   }, []);
-
+import erc721Abi from '../erc721Abi';
+function Erc721({ web3, account, erc721list }) {
+  const [to, setTo] = useState('');
+  const sendToken = async (tokenAddr, tokenId) => {
+    // NFT 주소
+    // NFT 주소를 받아오는 로직 구현 필요
+    const newAddr = '0xe4014090EE4CB039182123eba8d9d1E094F6deAD';
+    const tokenContract = await new web3.eth.Contract(erc721Abi, newAddr, {
+      from: account,
+    });
+    console.log(to);
+    if (to !== null) {
+      tokenContract.methods
+        .transferFrom(account, to, tokenId)
+        .send({
+          from: account,
+        })
+        .on('receipt', (receipt) => {
+          console.log(receipt);
+          setTo('');
+        });
+    }
+  };
   console.log('arr', erc721list);
 
   return (
@@ -42,7 +35,7 @@ function Erc721({ erc721list }) {
             <span className="symbol">{token.symbol}</span>)
             <div className="nft">id: {token.tokenId}</div>
             <img src={token.tokenURI} width={300} />
-            {/* <div className="tokenTransfer">
+            <div className="tokenTransfer">
               To:{' '}
               <input
                 type="text"
@@ -57,7 +50,7 @@ function Erc721({ erc721list }) {
               >
                 토큰 보내기
               </button>
-            </div> */}
+            </div>
           </div>
         );
       })}
