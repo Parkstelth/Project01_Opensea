@@ -1,10 +1,15 @@
 import React from 'react';
 import Items from './Items';
 import './ItemList.css'
+import { Link } from 'react-router-dom';
 
+function loadData(value){
+  console.log(value)
+}
 
 const ItemList = ({ data }) => {
   console.log(data)
+
   return (
     <div className="card-group addOption">
       {data.map((item) => (
@@ -13,7 +18,14 @@ const ItemList = ({ data }) => {
         <div className="card-body addOption">
           <h5 className="card-title addOption">{item.name}</h5>
           {/* <p className="card-text">{item.description}</p> */}
-          <p className="card-text addOption"><button type="button" class="btn btn-secondary">상세보기</button></p>
+          <p className="card-text addOption"><button type="button" 
+          onClick={()=>loadData([{
+          "collectionName" : item.collection.name,
+          "name":item.name,
+          "description":item.description,
+          "price":0
+          }])} 
+          className="btn btn-secondary"><Link to='/about'>상세보기</Link></button></p>
         </div>
       </div>
      
