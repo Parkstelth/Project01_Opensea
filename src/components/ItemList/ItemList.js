@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Items from './Items';
 import { Link } from 'react-router-dom';
-
+import './ItemList.css';
 const ItemList = ({ data, onClickedItem }) => {
   const onClickItem = (e) => {
     onClickedItem(e);
@@ -18,7 +18,7 @@ const ItemList = ({ data, onClickedItem }) => {
             {/* <p className="card-text">{item.description}</p> */}
             <p className="card-text addOption">
               <button type="button" class="btn btn-secondary">
-                상세보기
+                구매하기
               </button>
             </p>
           </div>
