@@ -13,6 +13,7 @@ import About from './components/About'
 function App() {
   const [mainaccount, setMainaccount] = useState('Address not yet!');
   const [mainweb3, setMainweb3] = useState('not load web3');
+  const [clickeditem, setClickeditem] = useState();
   useEffect(() => {
     setMainaccount(mainaccount);
   }, [mainaccount]);
@@ -22,13 +23,13 @@ function App() {
       <Nav setmainaccount={setMainaccount} setmainweb3={setMainweb3} />
       <Routes>
         <Route exact={true} path="/" element={<Home account={mainaccount} />} />
-        <Route path="/browse" element={<Browse />} />
+        <Route path="/browse" element={<Browse setclickeditem={setClickeditem}/>} />
         <Route path="/create" element={<Create account={mainaccount} />} />
         <Route
           path="/activity"
           element={<Activity account={mainaccount} web3={mainweb3} />}
         />
-        <Route path="/about" element={<About />}/>
+        <Route path={`/${clickeditem}`} element={<About test={'test!!'}/>}/>
       </Routes>
     </BrowserRouter>
   );

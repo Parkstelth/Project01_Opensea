@@ -1,32 +1,35 @@
-.card-group.addOption{
-    flex-wrap: wrap;
-    width: 1100px;
-    
+.card-group.addOption {
+  flex-wrap: wrap;
+  width: 1250px;
+  align-items: center;
 }
-.card.addOption{
-    min-width: 240px;
-    padding:10px;
-}
-
-.card-group>.card+.card{
-    margin-left: 20px; 
-    border-left: auto; 
+.card.addOption {
+  min-width: 240px;
+  padding: 10px;
 }
 
-.card-text.addOption{
-    position: absolute;
-    bottom:10px;
-    left: 0;
-    text-align: center;
-    right: 0
+.card-group > .card + .card {
+  border-left: auto;
+}
+.card-img-top {
+  width: 250px;
+  height: 250px;
 }
 
-.card-title.addOption{
-    padding-bottom:20px;
+.card-text.addOption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  right: 0;
 }
 
-.card-body.addOption{
-    position: relative;
-    height: 150px;
+.card-title.addOption {
+  padding-bottom: 20px;
+}
+
+.card-body.addOption {
+  height: 150px;
+  position: relative;
 }
 
