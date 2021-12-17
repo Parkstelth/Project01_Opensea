@@ -18,7 +18,7 @@ const ItemList = ({ data }) => {
             <h5 className="card-title addOption">{item.name}</h5>
             {/* <p className="card-text">{item.description}</p> */}
             <p className="card-text addOption">
-              <button type="button" class="btn btn-secondary" onClick={}>
+              <button type="button" class="btn btn-secondary" onClick={null}>
                 <Link to='/about' class="btn btn-secondary">상세보기</Link>
               </button>
             </p>

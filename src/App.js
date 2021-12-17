@@ -10,6 +10,7 @@ import Nav from './components/Nav';
 import Activity from './components/Activity';
 import Browse from './components/Browse';
 import About from './components/About'
+
 function App() {
   const [mainaccount, setMainaccount] = useState('Address not yet!');
   const [mainweb3, setMainweb3] = useState('not load web3');
