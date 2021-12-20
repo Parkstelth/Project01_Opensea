@@ -98,6 +98,7 @@ a {
 }
 .LeftContent2 {
     flex: 1 1 auto;
+    color: rgb(53, 56, 64);
     margin-top: 10px;
     font-size: 18px;
     max-width: 300px;
