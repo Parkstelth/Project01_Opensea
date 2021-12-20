@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import "./HomeComponent/Home.css";
 import HomeComponent1 from "./HomeComponent/HomeComponent1";
 import HomeComponent2 from "./HomeComponent/HomeComponent2";
-import Footer from "./HomeComponent/Footer";
+// import Footer from "./HomeComponent/Footer";
 
 function Home({ account }) {
     return (
@@ -18,7 +18,7 @@ function Home({ account }) {
             {/* <div>{account}</div> */}
             <HomeComponent2 />
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

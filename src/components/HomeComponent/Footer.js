@@ -27,8 +27,8 @@ function Footer() {
                     <a href="https://coinbase.com">
                         <svg className="coinbaseLogo" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 579 126" width="70" height="100">
                             <style>
-                                {`#Page-1{ fill:#ffffffcd}`}
-                                {`#Page-1:hover{fill:#ffffff}`}
+                                {`.st0{ fill:#ffffffcd}`}
+                                {`.st0:hover{fill:#ffffff}`}
                             </style>
 
                             <title>Imported Layers</title>
