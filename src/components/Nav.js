@@ -55,10 +55,10 @@ function Nav({ setmainaccount, setmainweb3 }) {
 
   return (
     <div>
-      <div className="menu">
+      {/* <div className="menu">
         <div className="dropdown-container">
           <div>
-            <img src="https://opensea.io/static/images/logos/opensea-logo.png" />
+            <img src="https://storage.googleapis.com/opensea-static/Logomark/OpenSea-Full-Logo%20(dark).png" />
           </div>
           <div>
             <button>
@@ -75,17 +75,14 @@ function Nav({ setmainaccount, setmainweb3 }) {
             placeholder="Search items, collections, and accounts"
           />
         </div>
-      </div>
+      </div> */}
       <div className="menu-large">
         <div className="dropdown-container">
-          <div>
-            <img src="https://opensea.io/static/images/logos/opensea-logo.png" />
-          </div>
           <div>
             <span>
               <h2>
                 <Link to="/" className="title">
-                  Opensea
+                  <img src="https://storage.googleapis.com/opensea-static/Logomark/OpenSea-Full-Logo%20(dark).png" height='28'/>
                 </Link>
               </h2>
             </span>
@@ -110,14 +107,19 @@ function Nav({ setmainaccount, setmainweb3 }) {
                 Activity
               </Link>
             </li>
-            <li className="menu-item">Ranking</li>
+            <li className="menu-item">
+              Resources
+              <ul className="menu-item-drop">
+                <li><a href="https://opensea.io/rankings" target="_black" className="menu-item">Ranking</a></li>
+                <li><a href="https://support.opensea.io/hc/en-us" target="_black" className="menu-item">Help</a></li>
+                <li><a href="https://opensea.io/blog" target="_blank" className="menu-item">Blog</a></li>
+              </ul>
+            </li>
             <li>
               <Link to="/create" className="menu-item">
                 Create
               </Link>
             </li>
-            <li className="menu-item">Help</li>
-            <li className="menu-item">Blog</li>
             <li className="menu-item">
               <MdAccountCircle
                 className="menu-icon"
