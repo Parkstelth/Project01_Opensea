@@ -1,0 +1,17 @@
+.newErc721{
+    margin:65px auto;
+}
+
+.flexbox{
+    justify-content: center;
+    
+}
+
+.input.addOption{
+    width: 380px;
+}
+
+.btn.btn-secondary.addOption{
+    width: 230px;
+    margin-left: 4px;
+}

@@ -1,0 +1,47 @@
+
+.card-group.erc721list.addOption{
+flex-wrap: wrap;
+width: 1300px;
+
+}
+
+.card-img-top.addOption{
+    max-width: 300px;
+    margin:10px;
+}
+
+.card.erc721token.addOption{
+    width: 650px;
+    flex:none;
+}
+
+.card-group>.card{
+    flex:none;
+}
+
+.flexbox{
+    display: flex;   
+}
+
+.flexbox2{
+ display: flex;
+ flex-direction: column;
+ margin-left:10px;
+}
+
+.name{
+padding-top:20px;
+}
+
+.tokenTransfer{
+padding-top:20px;
+}
+
+
+.card-title.addOption.title{
+    padding-bottom: 0px;
+    width: 350px;
+    height: 30px;;
+    font-size: 15px;
+    font-weight: normal;
+}

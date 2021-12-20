@@ -1,0 +1,36 @@
+.card-group.addOption {
+  flex-wrap: wrap;
+  width: 1250px;
+  align-items: center;
+}
+.card.addOption {
+  min-width: 240px;
+  padding: 10px;
+}
+
+.card-group > .card + .card {
+  border-left: auto;
+}
+.card-img-top {
+  width: 250px;
+  height: 250px;
+}
+
+.card-text.addOption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  right: 0;
+}
+
+.card-title.addOption {
+  padding-bottom: 20px;
+}
+
+.card-body.addOption {
+  height: 150px;
+  position: relative;
+}
+
+

@@ -2,7 +2,7 @@ import React from 'react';
 
 import "./Create.css"
 
-function Create() {
+function Ranking() {
 
     return (
       <div className="mainset">
@@ -12,4 +12,4 @@ function Create() {
     )
   }
   
-  export default Create;
+  export default Ranking;

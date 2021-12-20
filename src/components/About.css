@@ -1,0 +1,18 @@
+.card.mb-3.addOption{
+    flex-direction: row;
+    max-width: 800px;
+    margin :50px auto;
+}
+
+.eth-logo{
+    width: 16px;
+    height: 16px;
+}
+
+.card-img-top.addOption{
+    min-width: 200px;
+}
+
+.btn.btn-primary{
+    margin-top:6px;
+}

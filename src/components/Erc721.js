@@ -1,16 +1,18 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState } from 'react';
 import erc721Abi from '../erc721Abi';
-function Erc721({ web3, account, erc721list }) {
+import './Erc721.css';
+
+function Erc721({ web3, account, erc721list,tokenAddr }) {
+
+  let checkId = []
   const [to, setTo] = useState('');
   const sendToken = async (tokenAddr, tokenId) => {
     // NFT 주소
     // NFT 주소를 받아오는 로직 구현 필요
-    const newAddr = '0xe4014090EE4CB039182123eba8d9d1E094F6deAD';
-    const tokenContract = await new web3.eth.Contract(erc721Abi, newAddr, {
+    const tokenContract = await new web3.eth.Contract(erc721Abi, tokenAddr, {
       from: account,
     });
-    console.log(to);
     if (to !== null) {
       tokenContract.methods
         .transferFrom(account, to, tokenId)
@@ -23,39 +25,44 @@ function Erc721({ web3, account, erc721list }) {
         });
     }
   };
-  console.log('arr', erc721list);
 
   return (
-    <div className="erc721list">
+    <div className="card-group erc721list addOption">
       {erc721list.map((token) => {
-        console.log(token);
-        return (
-          <div className="erc721token">
-            Name: <span className="name">{token.name}</span>(
-            <span className="symbol">{token.symbol}</span>)
-            <div className="nft">id: {token.tokenId}</div>
-            <img src={token.tokenURI} width={300} />
-            <div className="tokenTransfer">
-              To:{' '}
-              <input
-                type="text"
-                value={to}
-                onChange={(e) => {
-                  setTo(e.target.value);
-                }}
-              />
-              <button
-                className="sendErc721Btn"
-                onClick={sendToken.bind(this, token.address, token.tokenId)}
-              >
-                토큰 보내기
-              </button>
+        if(checkId.indexOf(token.tokenId)==-1){
+          checkId.push(token.tokenId);
+         
+          return (
+            <div className="card erc721token addOption" key={token.tokenId}>
+              <div className="flexbox">
+              <img className="card-img-top addOption" src={token.tokenURI} width={300} />
+              <div className="flexbox2">
+              <div className="name"><strong>Name : </strong>{token.name}</div>
+              <div className="symbol"><strong>Symbol : </strong>{token.symbol}</div>
+              <div className="nft"><strong>ID : </strong>{token.tokenId}</div>
+              <div className="tokenTransfer">
+                <input
+                className="card-title addOption title"
+                  type="text"
+                  value={to}
+                  placeholder="전송받을 주소 입력"
+                  onChange={(e) => {
+                    setTo(e.target.value);
+                  }}
+                />
+                <button className="card-text sendErc721Btn btn btn-secondary" onClick={sendToken.bind(this, tokenAddr, token.tokenId)}>
+                  전송
+                </button>
+              </div>
+              </div>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        }
+      })
+      }
     </div>
   );
 }
-//0x29a55a08460de2eF991d8B5e14F83A681C424520
+
 export default Erc721;
