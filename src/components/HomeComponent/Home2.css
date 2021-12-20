@@ -1,0 +1,65 @@
+.secondComponent {
+    padding-top: 30px;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.secondComponentInside {
+    width: 100%;
+    max-width: min(800px, 100% - 80px);
+    box-sizing: border-box;
+    display: block;
+}
+.firstContent {
+    font-size: 25px;
+    margin-bottom: 8px;
+    margin-top: 0px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.secondContent {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 10px;
+    color: rgb(112, 122, 131);
+}
+
+.thirdContent {
+    min-width: 800px;
+    background: url(https://static.opensea.io/gas-free/video-background.svg) center center / contain no-repeat;
+    padding: 40px 100px 30px;
+    box-sizing: border-box;
+    display: block;
+}
+.thirdContent2 {
+    font-weight: 500;
+    font-size: 11px;
+    color: rgb(112, 122, 131);
+    text-align: center;
+}
+
+.fourthContent {
+    margin-bottom: 70px;
+    margin-top: 0px;
+    justify-content: center;
+    display: flex;
+}
+
+.fourthContent1 {
+    color: white;
+    background-color: rgb(32, 129, 226);
+    text-decoration: none;
+    display: inline-flex;
+    flex-direction: row;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 18px;
+}
+.fourthContent1:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(24, 104, 183);
+}

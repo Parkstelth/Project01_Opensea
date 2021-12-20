@@ -12705,7 +12705,7 @@
     "web3-core-method" "1.6.1"
     "web3-utils" "1.6.1"
 
-"web3-eth-contract@1.6.1":
+"web3-eth-contract@^1.6.1", "web3-eth-contract@1.6.1":
   "integrity" "sha512-GXqTe3mF6kpbOAakiNc7wtJ120/gpuKMTZjuGFKeeY8aobRLfbfgKzM9IpyqVZV2v5RLuGXDuurVN2KPgtu3hQ=="
   "resolved" "https://registry.npmjs.org/web3-eth-contract/-/web3-eth-contract-1.6.1.tgz"
   "version" "1.6.1"
