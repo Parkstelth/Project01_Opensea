@@ -4,6 +4,7 @@ import TokenList from './Tokenlist';
 import Web3 from 'web3';
 import erc721Abi from '../erc721Abi';
 import './Activity.css';
+import Footer from './HomeComponent/Footer';
 
 function Activity({ web3, account }) {
   const [newErc721addr, setNewErc721addr] = useState();
@@ -24,7 +25,7 @@ function Activity({ web3, account }) {
 
     for (let tokenId of arr) {
       let tokenOwner = await tokenContract.methods.ownerOf(tokenId).call();
-      console.log(tokenOwner,'==?',account)
+      console.log(tokenOwner, '==?', account);
       if (String(tokenOwner).toLowerCase() === account) {
         let tokenURI = await tokenContract.methods.tokenURI(tokenId).call();
         setErc721list((prevState) => {
@@ -37,20 +38,29 @@ function Activity({ web3, account }) {
   return (
     // 생략
     <div className="newErc721">
-
       <div className="flexbox">
-      <input
-        type="text"
-        className="input addOption"
-        placeholder="Search your NFTs"
-        onChange={(e) => {
-          setNewErc721addr(e.target.value); // 입력받을 때마다 newErc721addr 갱신
-        }}
-      ></input>
-      <button onClick={addNewErc721Token} className="btn btn-secondary addOption" >ERC-721 Contract Address</button>
+        <input
+          type="text"
+          className="input addOption"
+          placeholder="Search your NFTs"
+          onChange={(e) => {
+            setNewErc721addr(e.target.value); // 입력받을 때마다 newErc721addr 갱신
+          }}
+        ></input>
+        <button
+          onClick={addNewErc721Token}
+          className="btn btn-secondary addOption"
+        >
+          ERC-721 Contract Address
+        </button>
       </div>
 
-      <TokenList web3={web3} account={account} erc721list={erc721list} newErc721addr={newErc721addr} />
+      <TokenList
+        web3={web3}
+        account={account}
+        erc721list={erc721list}
+        newErc721addr={newErc721addr}
+      />
     </div>
   );
 }

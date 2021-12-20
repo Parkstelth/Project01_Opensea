@@ -161,7 +161,7 @@ function Footer() {
                             // x="0px"
                             // y="0px"
                             width="170"
-                            height="200"
+                            height="70"
                             viewBox="-153 -46 652 652"
                             // style="enable-background:new -153 -46 652 652;"
                             xmlSpace="preserve"
@@ -203,7 +203,7 @@ function Footer() {
                 </div>
                 <div className="blockchainCapital">
                     <a href="">
-                        <svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg" width="130" height="150" viewBox="0 0 652 652" xmlSpace="preserve">
+                        <svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg" width="130" height="70" viewBox="0 0 652 652" xmlSpace="preserve">
                             <style type="text/css">
                                 {`.st0{ fill:#ffffffcd}`}
                                 {`.st0:hover{fill:#ffffff}`}
