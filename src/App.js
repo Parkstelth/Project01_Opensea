@@ -41,7 +41,7 @@ function App() {
                 <Route path="/browse" element={<Browse onClickItem={onClickItem} />} />
                 <Route path="/create" element={<Create account={mainaccount} />} />
                 <Route path="/activity" element={<Activity account={mainaccount} web3={mainweb3} />} />
-                <Route path={`/browse/${clickedItem}`} element={<About clickedItem={clickedItem} />} />
+                <Route path="/browse/about" element={<About clickedItem={clickedItem} />} />
             </Routes>
             <Footer />
         </BrowserRouter>
