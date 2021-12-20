@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ItemList from './ItemList/ItemList';
-import Items from './ItemList/Items';
-import './Browse.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ItemList from "./ItemList/ItemList";
+import Items from "./ItemList/Items";
+import "./Browse.css";
 const Browse = ({ onClickItem }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -26,11 +26,11 @@ const Browse = ({ onClickItem }) => {
     onClickItem(e);
   };
 
-  return (
-    <div className="browse-container">
-      <ItemList data={data} onClickedItem={onClickedItem}></ItemList>
-    </div>
-  );
+    return (
+        <div className="browse-container">
+            <ItemList data={data} onClickedItem={onClickedItem}></ItemList>
+        </div>
+    );
 };
 
 export default Browse;
