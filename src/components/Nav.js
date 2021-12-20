@@ -3,6 +3,7 @@ import '../components/Nav.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Web3 from 'web3';
+// const Contract = require('web3-eth-contract');
 
 import { FiArrowDown, FiChevronDown } from 'react-icons/fi';
 import {
@@ -21,7 +22,7 @@ import {
   MdAccountCircle,
 } from 'react-icons/md';
 
-function Nav({ setmainaccount, setmainweb3 }) {
+function Nav({ setmainaccount, setmainweb3, islogin }) {
   const [web3, setWeb3] = useState();
   const [account, setAccount] = useState('');
 
@@ -51,6 +52,7 @@ function Nav({ setmainaccount, setmainweb3 }) {
       method: 'eth_requestAccounts',
     });
     setAccount(accounts[0]);
+   
   };
 
   return (
@@ -102,15 +104,19 @@ function Nav({ setmainaccount, setmainweb3 }) {
         </div>
         <div>
           <ul className="menu-item-container">
-            <li className="menu-item">
-              <Link to="/browse">Browse</Link>
+            <li>
+              <Link to="/browse" className="menu-item">Browse</Link>
             </li>
             <li>
               <Link to="/activity" className="menu-item">
                 Activity
               </Link>
             </li>
-            <li className="menu-item">Ranking</li>
+            <li className="menu-item">
+            <Link to="/ranking" className="menu-item">
+                Ranking
+              </Link>
+            </li>
             <li>
               <Link to="/create" className="menu-item">
                 Create
@@ -118,14 +124,14 @@ function Nav({ setmainaccount, setmainweb3 }) {
             </li>
             <li className="menu-item">Help</li>
             <li className="menu-item">Blog</li>
-            <li className="menu-item">
-              <MdAccountCircle
-                className="menu-icon"
-                onClick={() => {
-                  connectWallet();
-                }}
-              />
-            </li>
+            <li className={islogin ? 'menu-item login' : 'menu-item'}>
+            <MdAccountCircle
+              className="menu-icon"
+              onClick={() => {
+                connectWallet();
+              }}
+            />
+          </li>
           </ul>
         </div>
       </div>

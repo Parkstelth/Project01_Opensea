@@ -304,3 +304,8 @@
     padding-left: 8px;
   }
 }
+
+.menu-item.login{
+  color: rgb(255, 80, 80);
+}
+
