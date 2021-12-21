@@ -31,7 +31,6 @@ function Erc721({ web3, account, erc721list,tokenAddr }) {
       {erc721list.map((token) => {
         if(checkId.indexOf(token.tokenId)==-1){
           checkId.push(token.tokenId);
-         
           return (
             <div className="card erc721token addOption" key={token.tokenId}>
               <div className="flexbox">

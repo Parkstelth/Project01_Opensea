@@ -12,12 +12,9 @@ function Home({ account }) {
             <div>
                 <div className="background"></div>
             </div>
-
             <HomeComponent1 />
-
             {/* <div>{account}</div> */}
             <HomeComponent2 />
-
             {/* <Footer /> */}
         </div>
     );

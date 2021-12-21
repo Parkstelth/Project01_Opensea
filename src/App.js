@@ -2,7 +2,6 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Create from './components/Create';
 import Home from './components/Home';
 import { useState, useEffect } from 'react';
@@ -12,8 +11,6 @@ import Browse from './components/Browse';
 import About from './components/About';
 import MyPage from './components/MyPage';
 import Footer from './components/HomeComponent/Footer';
-
-import erc20Abi from './abi/erc20Abi';
 
 function App() {
   const [mainaccount, setMainaccount] = useState('Address not yet!');
@@ -30,7 +27,8 @@ function App() {
   };
 
   useEffect(() => {
-    if (mainaccount === 'Address not yet!') {
+    
+    if (mainaccount === 'Address not yet!' || mainaccount===undefined || mainaccount ===null) {
       setIsLogin(false);
     } else {
       setIsLogin(true);

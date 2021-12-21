@@ -251,6 +251,7 @@
     color: rgb(80, 80, 80);
     text-decoration: none;
     /* overflow: hidden; */
+ 
   }
   .menu-item-drop {
     display: flex;
@@ -336,3 +337,20 @@
 .menu-item.login {
     color: rgba(255, 217, 0, 0.906);
 }
+
+.menu-item-drop.addOption{
+  z-index: 997;
+  background-color: white;
+  width: 73px;
+  border-radius: 14px;
+}
+
+.menu-addOption{
+  border-bottom: 1px solid #adadad;
+  text-align: center;
+}
+
+.menuOpa{
+  z-index: 998;
+}
+

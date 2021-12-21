@@ -54,7 +54,6 @@ function Activity({ web3, account }) {
           ERC-721 Contract Address
         </button>
       </div>
-
       <TokenList
         web3={web3}
         account={account}

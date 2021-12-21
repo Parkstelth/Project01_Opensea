@@ -42,7 +42,7 @@ function Nav({ setmainaccount, setmainweb3, login }) {
   };
 
   return (
-    <div>
+    <div className="opa">
       <div className="menu-large">
         <div className="dropdown-container">
           <div>
@@ -80,9 +80,9 @@ function Nav({ setmainaccount, setmainweb3, login }) {
               </Link>
             </li>
             <li className="menu-item">
-              Resources
-              <ul className="menu-item-drop">
-                <li>
+              <div className="menuOpa">Resources</div>
+              <ul className="menu-item-drop addOption">
+                <li className="menu-addOption">
                   <a
                     href="https://opensea.io/rankings"
                     target="_black"
@@ -91,7 +91,7 @@ function Nav({ setmainaccount, setmainweb3, login }) {
                     Ranking
                   </a>
                 </li>
-                <li>
+                <li className="menu-addOption">
                   <a
                     href="https://support.opensea.io/hc/en-us"
                     target="_black"
@@ -100,7 +100,7 @@ function Nav({ setmainaccount, setmainweb3, login }) {
                     Help
                   </a>
                 </li>
-                <li>
+                <li className="menu-addOption">
                   <a
                     href="https://opensea.io/blog"
                     target="_blank"
@@ -116,8 +116,8 @@ function Nav({ setmainaccount, setmainweb3, login }) {
                 Create
               </Link>
             </li>
-            <li className={login ? 'menu-item login' : 'menu-item'}>
-              <Link to="/mypage">
+            <li>
+              <Link to="/mypage" className={login ? 'menu-item login' : 'menu-item'}>
                 <MdAccountCircle
                   className="menu-icon"
                   onClick={() => {
@@ -132,4 +132,5 @@ function Nav({ setmainaccount, setmainweb3, login }) {
     </div>
   );
 }
+
 export default Nav;
